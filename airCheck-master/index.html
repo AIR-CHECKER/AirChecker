@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
+    <title>Aircheck | AQI & More</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.6/dist/css/autoComplete.min.css">
+    <link rel="stylesheet" href="assets/styles/loader-style.css">
+    <link rel="stylesheet" href="assets/styles/style.css">
+</head>
+
+<body>
+    <main>
+
+        <div id="init-wrapper">
+            <iframe id="init-bg" src="https://giphy.com/embed/3o7WIB00yXujVt4WEo" width="480" height="480"
+                frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        </div>
+        <!-- City input -->
+        <div id="user-info-card-wrapper">
+            <div class="card" id="city-card">
+                <span class="step-marker red"> STEP 1 </span>
+                <!-- <label for=""> City Name </label> -->
+                <!-- more info along label-->
+                <!-- <img src="assets/info.png" alt="" style="height: 15px; align-self: center; margin-left: 10px;"> -->
+                <div class="info-field-container">
+                    <input type="text" name="" id="city-name" placeholder="Enter city here"
+                        onchange="getCityName(this.value)" onkeydown="checkLength('city-name')">
+                    <img class="next-step-img" src="assets/images/arrow.png" alt="" srcset=""
+                        onclick="showNextCard('city-name')">
+                </div>
+
+            </div>
+
+            <!-- State input -->
+            <div class="card" id="state-card">
+                <span class="step-marker yellow"> STEP 2 </span>
+                <div class="info-field-container">
+                    <input type="text" name="" id="state-name" onkeydown="checkLength('state-name')"
+                        placeholder="Enter state here" onchange="getStateName(this.value)">
+                    <img class="next-step-img" src="assets/images/arrow.png" alt="" srcset=""
+                        onclick="showNextCard('state-name')">
+                </div>
+
+            </div>
+
+            <!-- Country input -->
+
+            <div class="card" id="country-card">
+                <span class="step-marker green"> STEP 3 </span>
+                <div class="info-field-container">
+                    <input type="text" name="" id="country-name" onkeydown="checkLength('country-name')" placeholder="Enter country here"
+                        onchange="getCountryName(this.value)">
+                    <img class="next-step-img" src="assets/images/checkmark.png" alt="" srcset="" onclick="getResult()">
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="result-card-wrapper">
+            <div class="card" id="result-card">
+                <div class="card-header">
+                    <h1> Air Check </h1>
+                    <span class="separator">
+                        &#9679;
+                    </span>
+                    <h4>
+                        Air quality stats and more
+                    </h4>
+                    <h4 id="version-info">
+                        version <b>1.0</b>
+                    </h4>
+                </div>
+                <div id="loader-wrapper">
+                    <div class="loading">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+                <div class="card-body" id="_stats">
+
+                    <p style="width: 100%;">
+                        Stats will be shown here, kindly follow the steps above for the same.
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- scripts -->
+    <script src="assets/scripts/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.6/dist/autoComplete.min.js"></script>
+</body>
+
+</html>
